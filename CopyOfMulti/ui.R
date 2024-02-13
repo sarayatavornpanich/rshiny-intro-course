@@ -28,7 +28,11 @@ fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-            plotOutput("distPlot")
+          tabsetPanel(
+            tabPanel("Plot One",plotOutput("distPlot")),
+            tabPanel("Plot Two",plotOutput("distPlot2")),
+          )
+            
         )
     )
 )

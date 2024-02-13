@@ -25,5 +25,19 @@ function(input, output, session) {
              main = 'CHANGED Histogram of waiting times')
 
     })
+    
+    output$distPlot2 <- renderPlot({
+      
+      # generate bins based on input$bins from ui.R
+      x    <- faithful[, 2]
+      bins <- seq(min(x), max(x), length.out = input$bins + 1)
+      
+      # draw the histogram with the specified number of bins
+      hist(x, breaks = bins, col = 'pink', border = 'red',
+           xlab = 'CHANGED Waiting time to next eruption (in mins)',
+           ylab = 'CHANGED frequency',
+           main = 'CHANGED Histogram of waiting times')
+      
+    })
 
 }
